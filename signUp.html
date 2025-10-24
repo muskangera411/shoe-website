@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Solevia</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #d4f5ec, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .register-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .register-container.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .register-container h1 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #D17A9A;
+    }
+
+    .register-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .register-container input:focus {
+      border-color: #D17A9A;
+      box-shadow: 0 0 5px rgba(46, 139, 87, 0.4);
+    }
+
+    .register-container button {
+      width: 100%;
+      padding: 12px;
+      background: #D17A9A;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .register-container button:hover {
+      background: #db608d;
+    }
+
+    .register-container p {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .register-container a {
+      color: #D17A9A;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .register-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+   <div id="navbar-placeholder"></div>
+  <div class="register-container">
+    <h1>Create Account</h1>
+    <form id="registerForm">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="logIn.html">Login here</a></p>
+  </div>
+
+  <script>
+    // Fade-in effect
+    window.addEventListener("load", () => {
+      document.querySelector(".register-container").classList.add("show");
+    });
+
+    // Fake register + redirect
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // stop actual form submission
+
+      alert("🎉 Registration successful! Redirecting to login...");
+
+      // Redirect after short delay
+      setTimeout(() => {
+        window.location.href = "logIn.html";
+      }, 1500);
+    });
+  </script>
+  <script>
+  // Load navbar.html into every page
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+
+      // Optional: Highlight current page
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.style.color = '#e53935'; // active color
+        }
+      });
+    })
+    .catch(err => console.log('Error loading navbar:', err));
+</script>
+
+</body>
+</html>

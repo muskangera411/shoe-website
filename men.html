@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Men's Footwear - Solevia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <div id="navbar-placeholder"></div>
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Men's Footwear Collection</h1>
+
+      <div class="products">
+  <a href="casualSneakers.html" class="card">
+    <img src="https://images.pexels.com/photos/48262/pexels-photo-48262.jpeg" alt="Sneakers">
+    <div class="card-content">
+      <h3>Casual Sneakers</h3>
+      <p>Stylish everyday wear</p>
+      <!-- <div class="price">₹2,499</div> -->
+    </div>
+  </a>
+
+  <a href="running.html" class="card">
+    <img src="https://images.pexels.com/photos/33378887/pexels-photo-33378887.jpeg" alt="Running Shoes">
+    <div class="card-content">
+      <h3>Running Shoes</h3>
+      <p>Comfort for long runs</p>
+      <!-- <div class="price">₹3,999</div> -->
+    </div>
+  </a>
+
+  <a href="formal.html" class="card">
+    <img src="https://www.montecarlo.in/cdn/shop/products/201819FW-2-7_1.jpg?v=1749459586" alt="Formal Shoes">
+    <div class="card-content">
+      <h3>Formal Shoes</h3>
+      <p>Perfect for office & events</p>
+      <!-- <div class="price">₹4,499</div> -->
+    </div>
+  </a>
+
+  <a href="loafers.html" class="card">
+    <img src="https://media.useahimsa.com/catalog/product/cache/64c7a4922f160b97a40c19c7b1f8e8e9/e/v/everyday-loafer-preto-2_1.jpg" alt="Loafers">
+    <div class="card-content">
+      <h3>Loafers</h3>
+      <p>Trendy & comfortable</p>
+      <!-- <div class="price">₹2,999</div> -->
+    </div>
+  </a>
+</div>
+
+  </section>
+
+ <footer>
+    <p>&copy; 2025 Solevia. All Rights Reserved.| Designed with ❤️ by Solevia Team</p>
+    <p>
+      <a href="privacyPolicy.html">Privacy Policy</a> |
+      <a href="termsOfService.html">Terms of Service</a> |
+      <a href="#">Contact Us</a>
+
+    </p>
+  </footer>
+  <script>
+  // Load navbar.html into every page
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+
+      // Optional: Highlight current page
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.style.color = '#e53935'; // active color
+        }
+      });
+    })
+    .catch(err => console.log('Error loading navbar:', err));
+</script>
+
+</body>
+</html>

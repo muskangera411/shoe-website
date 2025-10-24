@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - Solevia</title>
+  <link rel="stylesheet" href="products.css">
+  <style>
+    body {
+      background: linear-gradient(to right, #ffffff, #f8e0ec);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .product-detail {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 60px;
+    }
+    .product-detail img {
+      width: 350px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .product-info {
+      max-width: 450px;
+    }
+    .product-info h2 {
+      color: #D17A9A;
+    }
+    .product-info p {
+      color: #555;
+      line-height: 1.5;
+    }
+    .price {
+      font-size: 1.5rem;
+      color: #000;
+      margin-top: 15px;
+    }
+    .old-price {
+      text-decoration: line-through;
+      color: #888;
+      margin-left: 10px;
+    }
+    .discount {
+      color: #D17A9A;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    button {
+      background: #D17A9A;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 25px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #c64776;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <div class="product-detail">
+    <img id="productImage" alt="Product Image">
+    <div class="product-info">
+      <h2 id="productName"></h2>
+      <p id="productDescription"></p>
+      <p class="price">
+        <span id="productPrice"></span>
+        <span class="old-price" id="productOldPrice"></span>
+        <span class="discount" id="productDiscount"></span>
+      </p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <script src="scripts/productsData.js"></script>
+  <script>
+    const productId = localStorage.getItem("selectedProduct");
+    const product = products[productId];
+
+    if (product) {
+      document.getElementById("productImage").src = product.image;
+      document.getElementById("productName").textContent = product.name;
+      document.getElementById("productDescription").textContent = product.description;
+      document.getElementById("productPrice").textContent = `₹${product.price}`;
+      document.getElementById("productOldPrice").textContent = `₹${product.oldPrice}`;
+      document.getElementById("productDiscount").textContent = product.discount;
+    }
+
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoe Website Intro</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      background: black;
+    }
+
+    /* Dark overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3); /* lighter so video is visible */
+      z-index: 1;
+    }
+
+    /* Bottom content */
+    .content {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+
+    /* Animation keyframes */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    /* Heading animation */
+    .content h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 1s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    /* Tagline animation */
+    .tagline {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 1s ease-out forwards;
+      animation-delay: 1.3s;
+    }
+
+  
+    /* Fade-out effect */
+    .fade-out {
+      opacity: 0 !important;
+      transition: opacity 1s ease-in-out;
+    }
+    h1 {
+  font-family: 'Playfair Display', serif;
+}
+p {
+  font-family: 'Lato', sans-serif;
+}
+  </style>
+</head>
+<body>
+
+  <video src="videos/v2.mp4" autoplay muted loop playsinline></video>
+  <div class="overlay"></div>
+  <div class="content" id="introContent">
+    <h1>Welcome to Solevia</h1>
+    <p class="tagline">"Step into style. Every step tells your story."</p>
+   
+  </div>
+  <script>
+
+    setTimeout(() => {
+      document.getElementById('introContent').classList.add('fade-out');
+      document.querySelector('.overlay').classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = "index.html"; 
+      }, 1000);
+    }, 3000);
+  </script>
+
+</body>
+</html>
+

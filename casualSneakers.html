@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casual Sneakers - Shoetopia</title>
+    <link rel="stylesheet" href="products.css">
+     <script src="proScript.js"></script>
+     <script src="wishlist.js"></script>
+  </head>
+  <body>
+     <div id="navbar-placeholder"></div>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title">Men's Casual Sneakers</h1>
+      </div>
+    </section>
+
+    <section class="products">
+      <!-- Sneaker Cards -->
+
+       <!-- Card 1 -->
+      <div class="card" onclick="viewProduct('casualSneaker1')">
+        <img
+          src="https://tse4.mm.bing.net/th/id/OIP.5N4fcDBtuqGj192BFj-XnQHaE8?pid=Api&P=0&h=180"
+          alt="Sneaker"
+        />
+        <div class="card-content">
+          <h3>White Classic Sneaker</h3>
+          <p>Everyday comfort</p>
+          <div>
+            <span class="price">₹1,999</span
+            ><span class="old-price">₹2,799</span
+            ><span class="discount">30% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card" onclick="viewProduct('casualSneaker2')">
+        <img
+          src="https://tse1.mm.bing.net/th/id/OIP.ZCCuRZ8hDiwV9eb_Sd_oggHaFj?pid=Api&P=0&h=180"
+          alt="Sneaker"
+        />
+        <div class="card-content">
+          <h3>Black Street Sneaker</h3>
+          <p>Bold & stylish</p>
+          <div>
+            <span class="price">₹2,299</span
+            ><span class="old-price">₹3,299</span
+            ><span class="discount">25% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card" onclick="viewProduct('casualSneaker3')">
+        <img
+          src="https://tse3.mm.bing.net/th/id/OIP.M23AjqEEBt-1gGhXbsYPogHaHa?pid=Api&P=0&h=180"
+          alt="Sneaker"
+        />
+        <div class="card-content">
+          <h3>Grey Sport Sneaker</h3>
+          <p>Lightweight design</p>
+          <div>
+            <span class="price">₹1,799</span
+            ><span class="old-price">₹2,499</span
+            ><span class="discount">28% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card" onclick="viewProduct('casualSneaker4')">
+        <img
+          src="https://tse4.mm.bing.net/th/id/OIP.lJ-Mvxoz9CSOZlf0xlkewQHaHa?pid=Api&P=0&h=180"
+          alt="Sneaker"
+        />
+        <div class="card-content">
+          <h3>Urban Blue Sneaker</h3>
+          <p>Trendy vibes</p>
+          <div>
+            <span class="price">₹2,499</span
+            ><span class="old-price">₹3,599</span
+            ><span class="discount">31% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card" onclick="viewProduct('casualSneaker5')">
+        <img
+          src="https://tse2.mm.bing.net/th/id/OIP.DVnXYFDQ1u9I-AUTb_2JxQHaHa?pid=Api&P=0&h=180"
+        />
+        <div class="card-content">
+          <h3>Canvas Low Top</h3>
+          <p>Casual & cool</p>
+          <div>
+            <span class="price">₹1,299</span
+            ><span class="old-price">₹1,899</span
+            ><span class="discount">32% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="card" onclick="viewProduct('casualSneaker6 ')">
+        <img
+          src="https://tse3.mm.bing.net/th/id/OIP.2VkaJKvdrxVUewl93i9x5QHaHa?pid=Api&P=0&h=180"
+        />
+        <div class="card-content">
+          <h3>Sporty Runner</h3>
+          <p>Performance wear</p>
+          <div>
+            <span class="price">₹2,099</span
+            ><span class="old-price">₹2,899</span
+            ><span class="discount">27% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- Card 7 -->
+      <div class="card" onclick="viewProduct('casualSneaker7')">
+        <img
+          src="https://tse4.mm.bing.net/th/id/OIP.MHf6ZCAp7iJOWjyZl933WgHaHa?pid=Api&P=0&h=180"
+        />
+        <div class="card-content">
+          <h3>Classic High Top</h3>
+          <p>Street style</p>
+          <div>
+            <span class="price">₹2,499</span
+            ><span class="old-price">₹3,499</span
+            ><span class="discount">29% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="card" onclick="viewProduct('casualSneaker8')">
+        <img
+          src="https://tse4.mm.bing.net/th/id/OIP.Wxwh1MTtsntNUSGIvkvGQAHaEJ?pid=Api&P=0&h=180"
+        />
+        <div class="card-content">
+          <h3>Minimalist White</h3>
+          <p>Timeless appeal</p>
+          <div>
+            <span class="price">₹1,899</span
+            ><span class="old-price">₹2,599</span
+            ><span class="discount">27% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="card" onclick="viewProduct('casualSneaker9')">
+        <img
+          src="https://tse2.mm.bing.net/th/id/OIP.Tc39NvkZFYYDGaV-ciOFeQHaFl?pid=Api&P=0&h=180"
+        />
+        <div class="card-content">
+          <h3>Chunky Sneaker</h3>
+          <p>Bold look</p>
+          <div>
+            <span class="price">₹2,799</span
+            ><span class="old-price">₹3,899</span
+            ><span class="discount">28% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+      <div class="card" onclick="viewProduct('casualSneaker10')">
+        <img
+          src="https://tse1.mm.bing.net/th/id/OIP.dATQhpuKWIWUThdsfLlUIgHaHa?pid=Api&P=0&h=180"
+        />
+        <div class="card-content">
+          <h3>Everyday Grey</h3>
+          <p>Simple & versatile</p>
+          <div>
+            <span class="price">₹1,699</span
+            ><span class="old-price">₹2,299</span
+            ><span class="discount">26% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 11 -->
+      <div class="card" onclick="viewProduct('casualSneaker11')">
+        <img
+          src="https://tse2.mm.bing.net/th/id/OIP.k4fVDNHxdF0LV2jn_WXiRAHaHa?pid=Api&P=0&h=180"
+        />
+        <div class="card-content">
+          <h3>Modern Slip-on</h3>
+          <p>Easy to wear</p>
+          <div>
+            <span class="price">₹1,599</span
+            ><span class="old-price">₹2,199</span
+            ><span class="discount">27% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 12 -->
+      <div class="card" onclick="viewProduct('casualSneaker12')">
+        <img
+          src="https://tse3.mm.bing.net/th/id/OIP.-ij7iEjJvceG24PoZSqUWAHaHa?pid=Api&P=0&h=180"
+        />
+        <div class="card-content">
+          <h3>Leather Accent Sneaker</h3>
+          <p>Premium touch</p>
+          <div>
+            <span class="price">₹3,099</span
+            ><span class="old-price">₹4,199</span
+            ><span class="discount">26% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 13 -->
+      <div class="card" onclick="viewProduct('casualSneaker13')">
+        <img
+          src="https://tse3.mm.bing.net/th/id/OIP.pmdtRZwYj0uBpoRJBawRZwHaG2?pid=Api&P=0&h=180"
+        />
+        <div class="card-content">
+          <h3>Sporty Black</h3>
+          <p>All-round use</p>
+          <div>
+            <span class="price">₹2,299</span
+            ><span class="old-price">₹3,199</span
+            ><span class="discount">28% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Card 14 -->
+      <div class="card" onclick="viewProduct('casualSneaker14')">
+        <img
+          src="https://tse4.mm.bing.net/th/id/OIP.mD1s44bUzomukKw3Hh7h6AHaHa?pid=Api&P=0&h=180"
+        />
+        <div class="card-content">
+          <h3>Casual Brown Sneaker</h3>
+          <p>Smart casual look</p>
+          <div>
+            <span class="price">₹1,799</span
+            ><span class="old-price">₹2,499</span
+            ><span class="discount">28% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 15 -->
+      <div class="card" onclick="viewProduct('casualSneaker15')">
+        <img
+          src="https://tse4.mm.bing.net/th/id/OIP.ltwr3c7CfVnfJ3eLcsc4bgHaFs?pid=Api&P=0&h=180"
+        />
+        <div class="card-content">
+          <h3>Retro White</h3>
+          <p>Vintage vibe</p>
+          <div>
+            <span class="price">₹2,099</span
+            ><span class="old-price">₹2,899</span
+            ><span class="discount">27% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 16 -->
+         <div class="card" onclick="viewProduct('casualSneaker16')">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.Wu5oh4RL6FvE0VIX_PR55QHaHa?pid=Api&P=0&h=180">
+          <div class="card-content">
+            <h3>White Classic Sneaker</h3><p>Everyday comfort</p><div><span class="price">₹1,999</span><span class="old-price">₹2,799</span><span class="discount">30% OFF</span></div>
+        <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div></div></div>
+
+          <!-- Card 17 -->
+    <div class="card" onclick="viewProduct('casualSneaker17')">
+  <img src="https://tse3.mm.bing.net/th/id/OIP.2Mnep1VNBeFu8_N_5mjVRQHaHa?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Steel Grey Sneaker</h3>
+    <p>Everyday comfort</p>
+    <div><span class="price">₹1,999</span><span class="old-price">₹2,799</span><span class="discount">30% OFF</span></div>
+    <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 18 -->
+<div class="card" onclick="viewProduct('casualSneaker18')">
+  <img src="https://tse2.mm.bing.net/th/id/OIP.7ElcCQb2FF-MhVqHiAqy2QHaE8?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Midnight Black Sneaker</h3>
+    <p>Bold & stylish</p>
+    <div><span class="price">₹2,299</span><span class="old-price">₹3,299</span><span class="discount">25% OFF</span></div>
+    
+    <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 19 -->
+<div class="card" onclick="viewProduct('casualSneaker19')">
+  <img src="https://tse3.mm.bing.net/th/id/OIP.mFYmgDam6WEd2uvLoftwpgHaJQ?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Storm Runner</h3>
+    <p>Lightweight design</p>
+    <div><span class="price">₹1,799</span><span class="old-price">₹2,499</span><span class="discount">28% OFF</span></div>
+    <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 20 -->
+<div class="card" onclick="viewProduct('casualSneaker20')">
+  <img src="https://tse4.mm.bing.net/th/id/OIP.fs1xdZveDTmKfusTujTWaQHaHa?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Ocean Blue Sneaker</h3>
+    <p>Trendy vibes</p>
+    <div><span class="price">₹2,499</span><span class="old-price">₹3,599</span><span class="discount">31% OFF</span></div>
+    <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 21 -->
+<div class="card" onclick="viewProduct('casualSneaker21')">
+  <img src="https://tse2.mm.bing.net/th/id/OIP.lfekX0cXxLF8uD25PhMRFQHaHa?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Classic Canvas Sneaker</h3>
+    <p>Casual & cool</p>
+    <div><span class="price">₹1,299</span><span class="old-price">₹1,899</span><span class="discount">32% OFF</span></div>
+  <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 22 -->
+<div class="card" onclick="viewProduct('casualSneaker22')">
+  <img src="https://tse3.mm.bing.net/th/id/OIP.0QvrrX1OJic3qIKjE4ow3QHaHa?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Speed Runner</h3>
+    <p>Performance wear</p>
+    <div><span class="price">₹2,099</span><span class="old-price">₹2,899</span><span class="discount">27% OFF</span></div>
+    <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 23 -->
+<div class="card" onclick="viewProduct('casualSneaker23')">
+  <img src="https://tse3.mm.bing.net/th/id/OIP.QMd_A4voVASNLFK9uxdVhgHaFj?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>High Rise Sneaker</h3>
+    <p>Street style</p>
+    <div><span class="price">₹2,499</span><span class="old-price">₹3,499</span><span class="discount">29% OFF</span></div>
+   <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 24 -->
+<div class="card" onclick="viewProduct('casualSneaker24')">
+  <img src="https://tse4.mm.bing.net/th/id/OIP.CHDbK5pOhe_xLQW9GJTBJwAAAA?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Snow White Sneaker</h3>
+    <p>Timeless appeal</p>
+    <div><span class="price">₹1,899</span><span class="old-price">₹2,599</span><span class="discount">27% OFF</span></div>
+   <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 25 -->
+<div class="card" onclick="viewProduct('casualSneaker25')">
+  <img src="https://tse4.mm.bing.net/th/id/OIP.EdUvNnKZ5TGvxDJpoqphUAHaHa?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Bulky Trend Sneaker</h3>
+    <p>Bold look</p>
+    <div><span class="price">₹2,799</span><span class="old-price">₹3,899</span><span class="discount">28% OFF</span></div>
+    <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 26 -->
+<div class="card" onclick="viewProduct('casualSneaker26 ')">
+  <img src="https://tse4.mm.bing.net/th/id/OIP.rHPhAIgPIQX2XCyQQyQ5NwHaHa?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Urban Grey</h3>
+    <p>Simple & versatile</p>
+    <div><span class="price">₹1,699</span><span class="old-price">₹2,299</span><span class="discount">26% OFF</span></div>
+    <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 27 -->
+<div class="card" onclick="viewProduct('casualSneaker27')">
+  <img src="https://tse2.mm.bing.net/th/id/OIP.jGQYuqey2XUyQfalPfCpBwHaHa?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Slipstream Sneaker</h3>
+    <p>Easy to wear</p>
+    <div><span class="price">₹1,599</span><span class="old-price">₹2,199</span><span class="discount">27% OFF</span></div>
+    <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 28 -->
+<div class="card" onclick="viewProduct('casualSneaker28')">
+  <img src="https://tse4.mm.bing.net/th/id/OIP.URP9QZTVzCmoU7jMjYWYjgHaHa?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Elite Leather Sneaker</h3>
+    <p>Premium touch</p>
+    <div><span class="price">₹3,099</span><span class="old-price">₹4,199</span><span class="discount">26% OFF</span></div>
+   <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 29 -->
+<div class="card" onclick="viewProduct('casualSneaker29')">
+  <img src="https://tse3.mm.bing.net/th/id/OIP.PvsGY8PdD76Mf7Vag3H3mQHaHa?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Jet Black Sneaker</h3>
+    <p>All-round use</p>
+    <div><span class="price">₹2,299</span><span class="old-price">₹3,199</span><span class="discount">28% OFF</span></div>
+ <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 30 -->
+<div class="card" onclick="viewProduct('casualSneaker30')">
+  <img src="https://tse3.mm.bing.net/th/id/OIP.WbK4wDQKXfwIRndwm_nqDwHaHa?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Brown Earth Sneaker</h3>
+    <p>Smart casual look</p>
+    <div><span class="price">₹1,799</span><span class="old-price">₹2,499</span><span class="discount">28% OFF</span></div>
+   <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+<!-- Card 31 -->
+<div class="card" onclick="viewProduct('casualSneaker31')">
+  <img src="ttps://tse4.mm.bing.net/th/id/OIP.IfChT6kyz-2ShFl7IWw68QhHaGD?pid=Api&P=0&h=180">
+  <div class="card-content">
+    <h3>Retro Classic</h3>
+    <p>Vintage vibe</p>
+    <div><span class="price">₹2,099</span><span class="old-price">₹2,899</span><span class="discount">27% OFF</span></div>
+    <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+  </div>
+</div>
+
+
+    <!-- Card 32 -->
+    <div class="card" onclick="viewProduct('casualSneaker32')">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.ZUhzikEgUhbvWG1P9JdAVgHaHa?pid=Api&P=0&h=180"><div class="card-content"><h3>Street Grey</h3><p>Modern edge</p><div><span class="price">₹2,299</span><span class="old-price">₹3,099</span><span class="discount">25% OFF</span></div>
+  <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div></div></div>
+
+          <!-- Card 33 -->
+    <div class="card" onclick="viewProduct('casualSneaker33')">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.ZqHrXl8x_wWvzvgVIwg2BgHaHa?pid=Api&P=0&h=180"><div class="card-content"><h3>Running White</h3><p>Light & flexible</p><div><span class="price">₹1,899</span><span class="old-price">₹2,699</span><span class="discount">30% OFF</span></div>
+  <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div></div></div>
+
+          <!-- Card 34 -->
+    <div class="card" onclick="viewProduct('casualSneaker34')">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.tbZvPal8TjCG_2tLdGBZoQHaE8?pid=Api&P=0&h=180"><div class="card-content"><h3>Everyday Blue</h3><p>Relaxed design</p><div><span class="price">₹2,099</span><span class="old-price">₹2,899</span><span class="discount">27% OFF</span></div>
+  <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div></div></div>
+
+          <!-- Card 35 -->
+    <div class="card" onclick="viewProduct('casualSneaker35')">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.NXc0NiNaTPl2tO_ANjSZ1QHaHa?pid=Api&P=0&h=180"><div class="card-content"><h3>Sporty Green</h3><p>Outdoor style</p><div><span class="price">₹1,799</span><span class="old-price">₹2,399</span><span class="discount">25% OFF</span></div>
+  <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div></div></div>
+
+          <!-- Card 36 -->
+    <div class="card" onclick="viewProduct('casualSneaker36')">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.KeZt_yvRdzewshCQzieIVwHaHa?pid=Api&P=0&h=180"><div class="card-content"><h3>Urban Red</h3><p>Eye-catching</p><div><span class="price">₹2,299</span><span class="old-price">₹3,199</span><span class="discount">28% OFF</span></div>
+  <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div></div></div>
+
+          <!-- Card 37 -->
+    <div class="card" onclick="viewProduct('casualSneaker37')">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.Lo1yxzZ9Pj2wQ1xg9EpmqQHaHa?pid=Api&P=0&h=180"><div class="card-content"><h3>White Mesh Sneaker</h3><p>Breathable design</p><div><span class="price">₹1,699</span><span class="old-price">₹2,399</span><span class="discount">29% OFF</span></div>
+  <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div></div></div>
+
+          <!-- Card 38 -->
+    <div class="card" onclick="viewProduct('casualSneaker38')"><img src="https://tse4.mm.bing.net/th/id/OIP.ZUfqBvBs36loGTbqW8ipbwHaGM?pid=Api&P=0&h=180"><div class="card-content"><h3>Denim Style Sneaker</h3><p>Unique texture</p><div><span class="price">₹2,499</span><span class="old-price">₹3,399</span><span class="discount">26% OFF</span></div>
+  <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div></div></div>
+
+          <!-- Card 39 -->
+    <div class="card" onclick="viewProduct('casualSneaker39')"><img src="https://tse4.mm.bing.net/th/id/OIP.R7M3UBMBUz3Djpc143ESbQAAAA?pid=Api&P=0&h=180"><div class="card-content"><h3>Slip-on Casual</h3><p>Convenient wear</p><div><span class="price">₹1,499</span><span class="old-price">₹2,099</span><span class="discount">28% OFF</span></div>
+  <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div></div></div>
+    </section>
+    <div class="cart-popup" id="cartPopup">✅ Added to Cart!</div>
+
+    <footer>
+      <p>
+        &copy; 2025 Solevia. All Rights Reserved. | Designed with ❤️ by Solevia
+        Team
+      </p>
+      <p>
+        <a href="privacyPolicy.html">Privacy Policy</a> |
+        <a href="termsOfService.html">Terms of Service</a> |
+        <a href="#">Contact Us</a>
+      </p>
+    </footer>
+    <script>
+  // Load navbar.html into every page
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+
+      // Optional: Highlight current page
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.style.color = '#e53935'; // active color
+        }
+      });
+    })
+    .catch(err => console.log('Error loading navbar:', err));
+</script>
+<script>
+    function viewProduct(id) {
+      window.location.href = `product.html?id=${id}`;
+    }
+
+    // Load navbar dynamically
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar-placeholder').innerHTML = data)
+      .catch(err => console.log('Navbar load error:', err));
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solevia-homepage</title>
+  <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+<nav>
+    <div class="logo">Solevia</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+        <a href="aboutUs.html">About Us</a>
+        <a href="logIn.html">Login</a>
+        <a href="logout.html">Logout</a>
+        <a href="cart.html">Cart🛒</a>
+        <a href="wishlist.html">Wishlist ❤️</a>
+        <a> .....</a>
+    </div>
+  </nav>
+
+   
+
+  <div class="hero">
+    <h1>Solevia</h1>
+    <p>Step into Style.From Sole to Soul.</p>
+  </div>
+
+  <!-- Gender Section (Now includes Kids) -->
+  <section class="gender-section fade-section" id="gender">
+  <h2 class="section-title">Shop by Category</h2>
+  <div class="gender-wrapper">
+    
+    <div class="gender-box fade-child">
+      <a href="men.html">
+        <img src="https://assets.myntassets.com/w_412,q_30,dpr_3,fl_progressive,f_webp/assets/images/28887350/2024/7/3/b2bcbee0-c723-4bf9-b82d-c6e33ff8b4f81720001210632-Mast--Harbour-Men-White-Round-Toe-Lightweight-Sneakers-49817-7.jpg" alt="Men's Shoes">
+        <h3>Men's Shoes</h3>
+      </a>
+    </div>
+    
+    <div class="gender-box fade-child">
+      <a href="female.html">
+        <img src="https://rukminim2.flixcart.com/image/704/844/xif0q/sandal/q/q/j/-original-imagvg6asqrvpzqu.jpeg?q=90&crop=false" alt="Women's Shoes">
+        <h3>Women's Shoes</h3>
+      </a>
+    </div>
+    
+    <div class="gender-box fade-child">
+      <a href="kids.html">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxjYG-qrzLtNGgTYOFgLAkV0qI2hcOYQqaSA&s" alt="Kids' Shoes">
+        <h3>Kids' Shoes</h3>
+      </a>
+    </div>
+    
+  </div>
+</section>
+
+
+  <!-- Filter Section -->
+  <section class="filter-section fade-section" id="products">
+    <h2 class="section-title">Browse Shoes</h2>
+    <div class="filter-controls fade-child">
+      <select>
+        <option>All Brands</option>
+        <option>Nike</option>
+        <option>Adidas</option>
+        <option>Puma</option>
+      </select>
+      <input type="text" placeholder="Search shoes...">
+    </div>
+    <div class="product-grid">
+      <div class="product-card fade-child"><a href="nike.html">
+        <img src="https://rukminim2.flixcart.com/image/704/844/xif0q/shoe/q/9/u/8-fd6454-003-8-nike-anthracite-black-wolf-grey-original-imah5fnamf3ymwza.jpeg?q=90&crop=false" alt="Nike Runner">
+        <h4>Nike Runner</h4></a>
+        <p>Comfortable for daily jogs.</p>
+      </div>
+      <div class="product-card fade-child"><a href="adidas.html">
+        <img src="https://rukminim2.flixcart.com/image/704/844/xif0q/shoe/8/1/y/-original-imagqfwbkd8fuhry.jpeg?q=90&crop=false" alt="Adidas Street">
+        <h4>Adidas Street</h4></a>
+        <p>Urban style for every day.</p>
+      </div>
+      <div class="product-card fade-child"><a href="puma.html">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTDYJW5cer7-m_0K4cpFSj0Pvgv47ed_irDA&s" alt="Puma Flex">
+        <h4>Puma Flex</h4></a>
+        <p>Stretchable and lightweight.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video-section fade-section" id="video" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://www.instamojo.com/blog/wp-content/uploads/2021/08/Sell-shoes-online-.jpg');">
+    <h3 class="section-title">Watch Our Latest Promo</h3>
+    <video src="videos/v1.mp4" autoplay muted loop playsinline></video>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Solevia. All Rights Reserved.| Designed with ❤️ by Solevia Team</p>
+    <p>
+      <a href="privacyPolicy.html">Privacy Policy</a> |
+      <a href="termsOfService.html">Terms of Service</a> |
+      <a href="#">Contact Us</a>
+    </p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('.fade-section');
+    function checkVisibility() {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < triggerBottom && rect.bottom > 0) {
+          section.classList.add('visible');
+        } else {
+          section.classList.remove('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('load', checkVisibility);
+  </script>
+  <script>
+  // Load navbar.html into every page
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+
+      // Optional: Highlight current page
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.style.color = '#e53935'; // active color
+        }
+      });
+    })
+    .catch(err => console.log('Error loading navbar:', err));
+</script>
+
+</body>
+</html>
+
+

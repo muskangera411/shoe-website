@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Women's Footwear - Solevia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div id="navbar-placeholder"></div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Women's Footwear Collection</h1>
+
+      <div class="products">
+        <a href="heels.html" class="card">
+          <img src="https://images.meesho.com/images/products/434417116/g2zqp_512.webp?width=512" alt="Heels">
+          <div class="card-content">
+            <h3>Elegant Heels</h3>
+            <p>Perfect for parties & events</p>
+            <!-- <div class="price">₹3,499</div> -->
+          </div>
+        </a>
+
+        <a href="sandals.html" class="card">
+          <img src="https://www.mytheresa.com/media/1094/1238/100/e2/P00908019.jpg" alt="Sandals">
+          <div class="card-content">
+            <h3>Summer Sandals</h3>
+            <p>Light & breezy comfort</p>
+            <!-- <div class="price">₹1,999</div> -->
+          </div>
+        </a>
+
+        <a href="womensneakers.html" class="card">
+          <img src="https://www.mytheresa.com/media/1094/1238/100/f3/P01062538.jpg" alt="Sneakers">
+          <div class="card-content">
+            <h3>Trendy Sneakers</h3>
+            <p>Everyday casual style</p>
+            <!-- <div class="price">₹2,799</div> -->
+          </div>
+        </a>
+
+        <a href="boots.html" class="card">
+          <img src="https://www.mytheresa.com/media/1094/1238/100/9b/P01063953.jpg" alt="Boots">
+          <div class="card-content">
+            <h3>Classic Boots</h3>
+            <p>Stylish & durable</p>
+            <!-- <div class="price">₹4,299</div> -->
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Solevia. All Rights Reserved.| Designed with ❤️ by Solevia Team</p>
+    <p>
+      <a href="privacyPolicy.html">Privacy Policy</a> |
+      <a href="termsOfService.html">Terms of Service</a> |
+      <a href="#">Contact Us</a>
+    </p>
+  </footer>
+  <script>
+  // Load navbar.html into every page
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+
+      // Optional: Highlight current page
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.style.color = '#e53935'; // active color
+        }
+      });
+    })
+    .catch(err => console.log('Error loading navbar:', err));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Solevia</title>
+   <link rel="stylesheet" href="products.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f9fdfb;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #D17A9A;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 50px 0;
+    }
+
+    section {
+      margin-bottom: 80px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease-out;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color:#D17A9A;
+      border-left: 5px solid #D17A9A;
+      padding-left: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .team {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .member {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      flex: 1 1 250px;
+      transition: transform 0.3s;
+    }
+
+    .member:hover {
+      transform: translateY(-10px);
+    }
+
+    .member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 4px solid #D17A9A;
+    }
+
+    footer {
+      background: #D17A9A;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  <header>
+    <h1>About Us</h1>
+  </header>
+   
+
+  <div class="container">
+    <section class="fade">
+      <h2>Our Story</h2>
+      <p>Welcome to <strong>Solevia</strong>, where passion meets fashion. Founded with the vision to revolutionize footwear, we bring together comfort, style, and durability in every step you take. Our journey started with a simple goal: to make high-quality footwear accessible to everyone.</p>
+    </section>
+
+    <section class="fade">
+      <h2>Our Mission</h2>
+      <p>We strive to create shoes that not only look good but also feel amazing. With innovative designs and sustainable practices, we are committed to making a positive impact on both fashion and the environment.</p>
+    </section>
+
+    <section class="fade">
+      <h2>Meet the Team</h2>
+      <div class="team">
+        <div class="member">
+          <img src="" alt="Team Member">
+          <h3>Muskan</h3>
+          <!-- <p>Founder & CEO</p> -->
+        </div>
+        <div class="member">
+          <img src="" alt="Team Member">
+          <h3>Lakshita Sharma</h3>
+          <!-- <p>Creative Director</p> -->
+        </div>
+        <div class="member">
+          <img src="" alt="Team Member">
+          <h3>Harnoor</h3>
+          <!-- <p>Marketing Head</p> -->
+        </div>
+        <div class="member">
+          <img src="" alt="Team Member">
+          <h3>Nakul</h3>
+          <!-- <p>Lead Designer</p> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="fade">
+      <h2>Why Choose Us?</h2>
+      <p>✔️ Trendy & comfortable designs <br>
+         ✔️ Premium quality materials <br>
+         ✔️ Affordable pricing <br>
+         ✔️ Commitment to sustainability <br>
+         ✔️ 24/7 Customer support</p>
+    </section>
+  </div>
+
+  <footer style="background-color: black">
+    <p style="color: #f9fdfb;">&copy; 2025 Shoetopia | Designed with ❤️ by team Solevia</p>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade');
+
+    const appearOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          entry.target.classList.remove('show');
+          return;
+        } else {
+          entry.target.classList.add('show');
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+  <script>
+  // Load navbar.html into every page
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+
+      // Optional: Highlight current page
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.style.color = '#e53935'; // active color
+        }
+      });
+    })
+    .catch(err => console.log('Error loading navbar:', err));
+</script>
+</body>
+</html>

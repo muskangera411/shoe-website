@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Solevia</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f9fdfb;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #D17A9A;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 50px 0;
+    }
+
+    section {
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease-out;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #D17A9A;
+      border-left: 5px solid #D17A9A;
+      padding-left: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    footer {
+      background:#D17A9A;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Privacy Policy</h1>
+  </header>
+   <div id="navbar-placeholder"></div>
+
+  <div class="container">
+    <section class="fade">
+      <h2>1. Introduction</h2>
+      <p>Your privacy is very important to us at <strong>Solevia</strong>. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website.</p>
+    </section>
+
+    <section class="fade">
+      <h2>2. Information We Collect</h2>
+      <ul>
+        <li><strong>Personal Information:</strong> Name, email address, phone number, shipping address, and payment details.</li>
+        <li><strong>Non-Personal Information:</strong> Browser type, device information, IP address, and browsing activity.</li>
+      </ul>
+    </section>
+
+    <section class="fade">
+      <h2>3. How We Use Your Information</h2>
+      <ul>
+        <li>To process and fulfill your orders.</li>
+        <li>To improve our website and services.</li>
+        <li>To send promotional offers, newsletters, and updates (you may opt out anytime).</li>
+        <li>To ensure security and prevent fraudulent transactions.</li>
+      </ul>
+    </section>
+
+    <section class="fade">
+      <h2>4. Sharing of Information</h2>
+      <p>We do not sell your personal data to third parties. However, we may share information with:</p>
+      <ul>
+        <li>Trusted service providers (payment gateways, shipping partners).</li>
+        <li>Law enforcement agencies when required by law.</li>
+      </ul>
+    </section>
+
+    <section class="fade">
+      <h2>5. Data Security</h2>
+      <p>We implement strict security measures to protect your data from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet is 100% secure.</p>
+    </section>
+
+    <section class="fade">
+      <h2>6. Cookies</h2>
+      <p>Our website uses cookies to improve user experience and analyze site performance. You can disable cookies through your browser settings.</p>
+    </section>
+
+    <section class="fade">
+      <h2>7. Your Rights</h2>
+      <ul>
+        <li>You may request access to your personal information.</li>
+        <li>You may request correction or deletion of your data.</li>
+        <li>You can opt-out of promotional emails anytime.</li>
+      </ul>
+    </section>
+
+    <section class="fade">
+      <h2>8. Changes to this Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised "Last Updated" date.</p>
+    </section>
+
+    <section class="fade">
+      <h2>9. Contact Us</h2>
+      <p>If you have any questions regarding this Privacy Policy, please contact us at <strong>privacy@solevia.com</strong>.</p>
+    </section>
+  </div>
+
+  <footer style="background-color: #333; padding-bottom:2px;padding-top: 0;">
+    <p style="color: #f9fdfb;">&copy; 2025 Solevia | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade');
+
+    const appearOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          entry.target.classList.remove('show');
+          return;
+        } else {
+          entry.target.classList.add('show');
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+  <script>
+  // Load navbar.html into every page
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+
+      // Optional: Highlight current page
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.style.color = '#e53935'; // active color
+        }
+      });
+    })
+    .catch(err => console.log('Error loading navbar:', err));
+</script>
+
+</body>
+</html>

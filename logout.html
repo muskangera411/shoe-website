@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout - Solevia</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #dc9db4, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .message-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      color: #D17A9A;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="message-box">
+    Logging you out...
+  </div>
+
+  <script>
+    // Show alert first
+    alert("✅ You have been logged out successfully!");
+
+    // Redirect to i2.html after 1.5 seconds
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 1200);
+  </script>
+  
+
+</body>
+</html>

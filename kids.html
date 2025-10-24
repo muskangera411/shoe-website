@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kids' Footwear - Solevia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <div id="navbar-placeholder"></div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">Kids' Footwear Collection</h1>
+
+      <div class="products">
+        <a href="kidssneakers.html" class="card">
+          <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQK7JHp7-jMOXnacSw_CH4wl2B_AwfpwemqqdsYJllEdqoJl6Sp5T-1xddY9m6HW4dGK4I80JhBnUvvJsZ4g1PYjALA63ORBf72M4C0NAWzvDYmP4EEnLu7" alt="Kids Sneakers">
+          <div class="card-content">
+            <h3>Kids Sneakers</h3>
+            <p>Playful & comfy everyday wear</p>
+          </div>
+        </a>
+
+        <a href="kidssandals.html" class="card">
+          <img src="https://www.ninobello.com/cdn/shop/files/IMG_30143_900x.jpg?v=1702313346" alt="Kids Sandals">
+          <div class="card-content">
+            <h3>Kids Sandals</h3>
+            <p>Light & airy summer styles</p>
+          </div>
+        </a>
+
+        <a href="kidsboots.html" class="card">
+          <img src="https://m.media-amazon.com/images/I/81Fs4mS+OaL._UY1000_.jpg" alt="Kids Boots">
+          <div class="card-content">
+            <h3>Kids Boots</h3>
+            <p>Durable & stylish for all weather</p>
+          </div>
+        </a>
+
+        <a href="kidsformals.html" class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXb7BKehIr2ZllUXFczU5SDTgbfSHncJTrOw&s" alt="Kids Formal Shoes">
+          <div class="card-content">
+            <h3>Kids Formal Shoes</h3>
+            <p>Smart looks for special occasions</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Solevia. All Rights Reserved.| Designed with ❤️ by Solevia Team</p>
+    <p>
+      <a href="privacyPolicy.html">Privacy Policy</a> |
+      <a href="termsOfService.html">Terms of Service</a> |
+      <a href="#">Contact Us</a>
+    </p>
+  </footer>
+  <script>
+  // Load navbar.html into every page
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+
+      // Optional: Highlight current page
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.style.color = '#e53935'; // active color
+        }
+      });
+    })
+    .catch(err => console.log('Error loading navbar:', err));
+</script>
+
+
+</body>
+</html>

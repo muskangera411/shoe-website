@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Solevia</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #dfa7bc, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .login-container.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .login-container h1 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #D17A9A;
+    }
+
+    .login-container input[type="email"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .login-container input:focus {
+      border-color:#D17A9A;
+      box-shadow: 0 0 5px #efa9c3;
+    }
+
+    .checkbox-group {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+      margin: 10px 0;
+      font-size: 0.9rem;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background: #D17A9A;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .login-container button:hover {
+      background: #c64776;
+    }
+
+    .login-container p {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .login-container a {
+      color: #D17A9A;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .login-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container fade">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <input type="email" placeholder="Email Address" required>
+      <input type="password" placeholder="Password" required>
+
+      <!-- Remember Me checkbox -->
+      <div class="checkbox-group">
+        <input type="checkbox" id="rememberMe">
+        <label for="rememberMe">Remember Me</label>
+      </div>
+
+      <!-- I'm not a robot checkbox -->
+      <div class="checkbox-group">
+        <input type="checkbox" id="notRobot" required>
+        <label for="notRobot">I'm not a robot</label>
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+    <p>Don’t have an account? <a href="signUp.html">Register</a></p>
+  </div>
+
+  <script>
+    // Fade-in effect on load
+    window.addEventListener("load", () => {
+      document.querySelector(".login-container").classList.add("show");
+    });
+
+    // Redirect to home.html after login
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // stop actual form submit
+
+      // Check if "I'm not a robot" is ticked
+      if (!document.getElementById("notRobot").checked) {
+        alert("Please confirm you are not a robot.");
+        return;
+      }
+
+      // Optionally: check Remember Me
+      if (document.getElementById("rememberMe").checked) {
+        console.log("User wants to be remembered.");
+      }
+
+      window.location.href = "home.html"; // redirect to homepage
+    });
+  </script>
+  
+
+</body>
+</html>

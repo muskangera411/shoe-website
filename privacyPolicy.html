@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Solevia</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #ff4d4d, #ff1a1a);
+      padding: 2rem 1rem;
+      text-align: center;
+      animation: fadeInDown 1s ease-in-out;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    h2 {
+      color: #D17A9A;
+      margin-top: 2rem;
+      border-left: 5px solid #D17A9A;
+      padding-left: 10px;
+    }
+
+    p, li {
+      color: #555;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+    }
+
+    a {
+      color: #D17A9A;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #f1f1f1;
+      color: #555;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #D17A9A;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Privacy Policy</h1>
+</header>
+
+<main>
+   <div id="navbar-placeholder"></div>
+  <p><em>Last Updated: August 15, 2025</em></p>
+
+  <p>Welcome to Solevia! Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website.</p>
+
+  <h2>1. Information We Collect</h2>
+  <ul>
+    <li>Personal details like name, email, phone number, and shipping address.</li>
+    <li>Payment information for order processing.</li>
+    <li>Browsing and purchase history.</li>
+  </ul>
+
+  <h2>2. How We Use Your Information</h2>
+  <ul>
+    <li>Process and deliver your orders.</li>
+    <li>Improve our products and services.</li>
+    <li>Send promotional offers and updates (only if you opt-in).</li>
+    <li>Ensure website security and prevent fraud.</li>
+  </ul>
+
+  <h2>3. Sharing Your Information</h2>
+  <ul>
+    <li>Trusted third-party partners for order fulfillment.</li>
+    <li>Payment processors to complete transactions.</li>
+    <li>Legal authorities when required by law.</li>
+  </ul>
+
+  <h2>4. Cookies</h2>
+  <p>Our website uses cookies to enhance your browsing experience. You can choose to disable cookies in your browser settings, but this may affect website functionality.</p>
+
+  <h2>5. Security of Your Data</h2>
+  <p>We use advanced security measures to protect your personal data from unauthorized access, alteration, or disclosure.</p>
+
+  <h2>6. Your Rights</h2>
+  <p>You have the right to access, update, or delete your personal information. You can contact us anytime to exercise these rights.</p>
+
+  <h2>7. Contact Us</h2>
+  <p>Email: <a href="mailto:support@shoetopia.com">support@solevia.com</a></p>
+</main>
+
+<footer>
+    <p>&copy; 2025 Solevia. All Rights Reserved.| Designed with ❤️ by Solevia Team</p>
+    <p>
+      <a href="privacyPolicy.html">Privacy Policy</a> |
+      <a href="termsOfService.html">Terms of Service</a> |
+      <a href="#">Contact Us</a>
+    </p>
+  </footer>
+<script>
+  // Load navbar.html into every page
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+
+      // Optional: Highlight current page
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.style.color = '#e53935'; // active color
+        }
+      });
+    })
+    .catch(err => console.log('Error loading navbar:', err));
+</script>
+
+
+</body>
+</html>

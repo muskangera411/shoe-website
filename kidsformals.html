@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kids Formal Shoes - Solevia</title>
+  <link rel="stylesheet" href="products.css" />
+  <script src="wishlist.js" defer></script>
+  <script src="scripts/productsData.js" defer></script>
+  <script src="proScript.js" defer></script>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <section class="hero" style="background:url('https://static.vecteezy.com/system/resources/previews/007/322/858/large_2x/rose-gold-backgrounds-free-photo.jpg') center/cover no-repeat;">
+    <div class="hero-inner">
+      <h1 class="hero-title">Kids Formal Shoes Collection</h1>
+    </div>
+  </section>
+
+  <section class="products" id="productContainer"></section>
+
+  <footer>
+    <p>&copy; 2025 Solevia. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('navbar-placeholder').innerHTML = html);
+  </script>
+</body>
+</html>

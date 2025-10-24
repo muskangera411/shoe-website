@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart - Solevia</title>
+  <link rel="stylesheet" href="products.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #222;
+    }
+
+    #cartItems {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 0 15px 50px;
+    }
+
+    .cart-card {
+      display: grid;
+      grid-template-columns: 100px 1fr 150px 80px;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .cart-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .cart-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .cart-info h3 {
+      margin: 0 0 5px;
+      font-size: 1.1rem;
+      color: #222;
+    }
+
+    .cart-info p {
+      margin: 0;
+      color: #e53935;
+      font-weight: bold;
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quantity-controls button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      background-color: #e53935;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .quantity-controls span {
+      min-width: 25px;
+      text-align: center;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    .remove-btn {
+      cursor: pointer;
+      font-size: 22px;
+      color: #888;
+      transition: color 0.2s;
+      text-align: center;
+    }
+
+    .remove-btn:hover {
+      color: #e53935;
+    }
+
+    #total-section {
+      max-width: 1000px;
+      margin: 20px auto 50px;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    #total {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .btn-container {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .action-btn {
+      background-color: #e53935;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .action-btn:hover {
+      background-color: #b71c1c;
+      transform: scale(1.05);
+    }
+
+    p.empty {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 1.2rem;
+      color: #888;
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ff7f7f;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .cart-card {
+        grid-template-columns: 80px 1fr;
+        grid-template-rows: auto auto;
+        text-align: center;
+      }
+      .quantity-controls {
+        justify-content: center;
+      }
+      .remove-btn {
+        justify-self: center;
+      }
+      #total-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .btn-container {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <h1>Your Cart 🛒</h1>
+
+  <div id="cartItems"></div>
+
+  <div id="total-section">
+    <div id="total"></div>
+    <div class="btn-container">
+      <button class="action-btn" onclick="window.location.href='boots.html'">← Continue Shopping</button>
+      <button class="action-btn" onclick="checkout()">Proceed to Checkout →</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Solevia. All Rights Reserved. | Designed with ❤️ by Solevia Team</p>
+    <p>
+      <a href="privacyPolicy.html">Privacy Policy</a> |
+      <a href="termsOfService.html">Terms of Service</a> |
+      <a href="#">Contact Us</a>
+    </p>
+  </footer>
+
+  <script>
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    cartItems = cartItems.map(item => ({ ...item, quantity: item.quantity || 1 }));
+
+    const cartContainer = document.getElementById("cartItems");
+    const totalContainer = document.getElementById("total");
+
+    function saveCart() {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      renderCart();
+    }
+
+    function updateQuantity(index, delta) {
+      cartItems[index].quantity = Math.max(1, cartItems[index].quantity + delta);
+      saveCart();
+    }
+
+    function removeItem(index) {
+      cartItems.splice(index, 1);
+      saveCart();
+    }
+
+    function calculateTotal() {
+      return cartItems.reduce((sum, item) => {
+        const price = parseFloat(item.price.toString().replace(/[^0-9.-]+/g, ""));
+        return sum + price * item.quantity;
+      }, 0);
+    }
+
+    function renderCart() {
+      if (cartItems.length === 0) {
+        cartContainer.innerHTML = '<p class="empty">Your cart is empty!</p>';
+        document.getElementById("total-section").style.display = "none";
+        return;
+      }
+
+      cartContainer.innerHTML = cartItems.map((item, index) => `
+        <div class="cart-card">
+          <img src="${item.img}" alt="${item.name}">
+          <div class="cart-info">
+            <h3>${item.name}</h3>
+            <p>${item.price}</p>
+          </div>
+          <div class="quantity-controls">
+            <button onclick="updateQuantity(${index}, -1)">-</button>
+            <span>${item.quantity}</span>
+            <button onclick="updateQuantity(${index}, 1)">+</button>
+          </div>
+          <span class="remove-btn" onclick="removeItem(${index})">&times;</span>
+        </div>
+      `).join("");
+
+      const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+      totalContainer.innerHTML = `Total (${totalItems} item${totalItems > 1 ? "s" : ""}): ₹${calculateTotal().toFixed(2)}`;
+      document.getElementById("total-section").style.display = "flex";
+    }
+
+    function checkout() {
+      const total = calculateTotal().toFixed(2);
+      if (cartItems.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
+      localStorage.setItem("checkoutTotal", total);
+      window.location.href = "checkout.html";
+    }
+
+    renderCart();
+  </script>
+  <script>
+  // Load navbar.html into every page
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+
+      // Optional: Highlight current page
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.style.color = '#e53935'; // active color
+        }
+      });
+    })
+    .catch(err => console.log('Error loading navbar:', err));
+</script>
+
+</body>
+</html>
