@@ -21,10 +21,10 @@
   </section>
 
   <!-- Product Cards -->
-  <section class="products">
+  <section class="products" >
 
     <!-- Card 1 -->
-    <div class="card">
+    <div class="card" onclick="viewProduct('nike1')">
       <img src="https://images.pexels.com/photos/3611797/pexels-photo-3611797.jpeg" alt="Nike Air Zoom">
       <div class="card-content">
         <h3>Nike Air Zoom</h3>
@@ -38,7 +38,7 @@
     </div>
 
     <!-- Card 2 -->
-    <div class="card">
+    <div class="card" onclick="viewProduct('nike2')">
       <img src="https://images.pexels.com/photos/1027130/pexels-photo-1027130.jpeg" alt="Nike Air Max">
       <div class="card-content">
         <h3>Nike Air Max</h3>
@@ -56,7 +56,7 @@
     </div>
 
     <!-- Card 3 -->
-    <div class="card">
+    <div class="card" onclick="viewProduct('nike3')">
       <img src="https://images.pexels.com/photos/12725051/pexels-photo-12725051.jpeg" alt="Nike Revolution">
       <div class="card-content">
         <h3>Nike Revolution</h3>
@@ -74,7 +74,7 @@
     </div>
 
     <!-- Card 4 -->
-    <div class="card">
+    <div class="card" onclick="viewProduct('nike4')">
       <img src="https://images.pexels.com/photos/8764560/pexels-photo-8764560.jpeg" alt="Nike Jordan">
       <div class="card-content">
         <h3>Nike Jordan</h3>
@@ -92,7 +92,8 @@
     </div>
 
     <!-- Extra Nike Sneakers -->
-    <div class="card">
+     <!-- Card 5 -->
+    <div class="card" onclick="viewProduct('nike5')">
       <img src="https://tse3.mm.bing.net/th/id/OIP.M23AjqEEBt-1gGhXbsYPogHaHa?pid=Api&P=0&h=180" alt="Nike Blazer Mid">
       <div class="card-content">
         <h3>Nike Blazer Mid</h3>
@@ -109,7 +110,8 @@
       </div>
     </div>
 
-    <div class="card">
+    <!-- Card 6-->
+    <div class="card" onclick="viewProduct('nike6')">
       <img src="https://tse4.mm.bing.net/th/id/OIP.Wxwh1MTtsntNUSGIvkvGQAHaEJ?pid=Api&P=0&h=180" alt="Nike Pegasus">
       <div class="card-content">
         <h3>Nike Pegasus</h3>
@@ -126,7 +128,8 @@
       </div>
     </div>
 
-    <div class="card">
+    <!-- Card 7 -->
+    <div class="card" onclick="viewProduct('nike7')">
       <img src="https://tse1.mm.bing.net/th/id/OIP.ZCCuRZ8hDiwV9eb_Sd_oggHaFj?pid=Api&P=0&h=180" alt="Nike Dunk Low">
       <div class="card-content">
         <h3>Nike Dunk Low</h3>
@@ -143,7 +146,8 @@
       </div>
     </div>
 
-    <div class="card">
+    <!-- Card 8 -->
+    <div class="card" onclick="viewProduct('nike8')">
       <img src="https://tse4.mm.bing.net/th/id/OIP.lJ-Mvxoz9CSOZlf0xlkewQHaHa?pid=Api&P=0&h=180" alt="Nike Free Run">
       <div class="card-content">
         <h3>Nike Free Run</h3>
@@ -206,6 +210,17 @@
     })
     .catch(err => console.log('Error loading navbar:', err));
 </script>
+<script>
+    function viewProduct(id) {
+      window.location.href = `product.html?id=${id}`;
+    }
+
+    // Load navbar dynamically
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar-placeholder').innerHTML = data)
+      .catch(err => console.log('Navbar load error:', err));
+  </script>
 
 </body>
 </html>

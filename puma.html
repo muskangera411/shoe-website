@@ -21,7 +21,8 @@
 
     <!-- Product Grid -->
     <section class="products">
-      <div class="card">
+      <!-- Card 1 -->
+      <div class="card" onclick="viewProduct('puma1')">
         <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/307818/01/fnd/IND/fmt/png/Scuderia-Ferrari-RS-X-Sneakers" />
         <div class="card-content">
           <h3>Puma RS-X</h3>
@@ -36,7 +37,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 2 -->
+      <div class="card"onclick="viewProduct('puma2')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqsqC_mdpO9Q8xGgWBGgeZQUwXVKA6dfq2gw&s" />
         <div class="card-content">
           <h3>Puma Future Rider</h3>
@@ -51,7 +53,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 3 -->
+      <div class="card" onclick="viewProduct('puma3')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-IByQ1ib0mji7-4SHmnxWdRpMLFbdVFvBTw&s" />
         <div class="card-content">
           <h3>Puma Smash v2</h3>
@@ -66,7 +69,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 4 -->
+      <div class="card" onclick="viewProduct('puma4')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU3CLvKQBKENGeCeVp6pfoREQ2yeZ7fQDYzQ&s" />
         <div class="card-content">
           <h3>Puma Carina</h3>
@@ -81,7 +85,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 5 -->
+      <div class="card" onclick="viewProduct('puma5')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrN1UVrtkGPe-7LK6YjM_CYr0MxxOFwZQCwQ&s" />
         <div class="card-content">
           <h3>Puma Suede Classic</h3>
@@ -96,7 +101,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 6 -->
+      <div class="card" onclick="viewProduct('puma6')">
         <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/306864/04/sv01/fnd/IND/fmt/png/Ferrari-Drift-Cat-Delta-Sneakers" />
         <div class="card-content">
           <h3>Puma Ferrari Drift Cat</h3>
@@ -111,7 +117,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 7 -->
+      <div class="card"onclick="viewProduct('puma7')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFwSdeQ7IryHooKxJrcGTmoFG9jed6RAXIBQ&s" />
         <div class="card-content">
           <h3>Puma Ignite</h3>
@@ -126,7 +133,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 8 -->
+      <div class="card" onclick="viewProduct('puma8')">
         <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/377875/03/sv01/fnd/IND/fmt/png/SOFTRIDE-Enzo-Evo-Slip-On-Running-Shoes" />
         <div class="card-content">
           <h3>Puma Enzo</h3>
@@ -141,7 +149,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 9 -->
+      <div class="card" onclick="viewProduct('puma9')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrZ80qn3C93E5cjveBySTLnStzOaktpyy3YQ&s" />
         <div class="card-content">
           <h3>Puma LQDCell</h3>
@@ -156,7 +165,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 10 -->
+      <div class="card" onclick="viewProduct('puma10')">
         <img src="https://images-static.nykaa.com/media/catalog/product/a/3/a3fabc9PUMAX00385543_7.jpg?tr=w-500" />
         <div class="card-content">
           <h3>Puma Rebound</h3>
@@ -171,7 +181,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 11 -->
+      <div class="card"onclick="viewProduct('puma11')">
         <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/394651/01/sv01/fnd/IND/fmt/png/PUMA-X-Ray-Slimmic-Metallic-Women's-Sneakers" />
         <div class="card-content">
           <h3>Puma X-Ray</h3>
@@ -186,7 +197,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 12 -->
+      <div class="card"onclick="viewProduct('puma12')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAoY1IcCI5sSGn8HDSzBYedyHL6UuEV2Hlhw&s" />
         <div class="card-content">
           <h3>Puma Electrify Nitro</h3>
@@ -232,6 +244,17 @@
     })
     .catch(err => console.log('Error loading navbar:', err));
 </script>
+<script>
+    function viewProduct(id) {
+      window.location.href = `product.html?id=${id}`;
+    }
+
+    // Load navbar dynamically
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar-placeholder').innerHTML = data)
+      .catch(err => console.log('Navbar load error:', err));
+  </script>
 
   </body>
 </html>
