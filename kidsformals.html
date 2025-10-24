@@ -1,33 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kids Formal Shoes - Solevia</title>
-  <link rel="stylesheet" href="products.css" />
-  <script src="wishlist.js" defer></script>
-  <script src="scripts/productsData.js" defer></script>
-  <script src="proScript.js" defer></script>
-</head>
-<body>
-  <div id="navbar-placeholder"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kids Formal Shoes - Solevia</title>
+    <link rel="stylesheet" href="products.css" />
+     <script src="proScript.js"></script>
+     <script src="wishlist.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+     <div id="navbar-placeholder"></div>
 
-  <section class="hero" style="background:url('https://static.vecteezy.com/system/resources/previews/007/322/858/large_2x/rose-gold-backgrounds-free-photo.jpg') center/cover no-repeat;">
-    <div class="hero-inner">
-      <h1 class="hero-title">Kids Formal Shoes Collection</h1>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero" style="background:url('https://static.vecteezy.com/system/resources/previews/007/322/858/large_2x/rose-gold-backgrounds-free-photo.jpg') center/cover no-repeat;">
+      <div class="hero-inner">
+        <h1 class="hero-title">Kids Formal Shoes Collection</h1>
+      </div>
+    </section>
 
-  <section class="products" id="productContainer"></section>
+    <!-- Product Grid -->
+    <section class="products">
+       <!-- Card 1 -->
+      <div class="card" onclick="viewProduct('kidsformals1')">
+        <img src="https://www.mumkins.in/cdn/shop/products/boys-shoes-bshoes089-black-1.jpg?v=1756207717&width=1080" />
+        <div class="card-content">
+          <h3>Black Leather Formals</h3>
+          <p>Classic school wear</p>
+          <div>
+            <span class="price">₹1,399</span><span class="old-price">₹1,899</span><span class="discount">26% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
 
-  <footer>
-    <p>&copy; 2025 Solevia. All Rights Reserved.</p>
-  </footer>
+       <!-- Card 2 -->
+      <div class="card" onclick="viewProduct('kidsformals2')">
+        <img src="https://tiimg.tistatic.com/fp/1/008/186/plain-round-washable-toe-style-lace-closure-formal-kids-leather-shoes-392.jpg" />
+        <div class="card-content">
+          <h3>Brown Formal Shoes</h3>
+          <p>Stylish & comfy</p>
+          <div>
+            <span class="price">₹1,499</span><span class="old-price">₹2,099</span><span class="discount">29% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
 
-  <script>
+       <!-- Card 3 -->
+      <div class="card" onclick="viewProduct('kidsformals3')">
+        <img src="https://diademstore.com/cdn/shop/files/49940_1_5db7abd3-f2b8-4c46-ba54-549c875e0db8.webp?v=1744100355" />
+        <div class="card-content">
+          <h3>Buckle Strap Formals</h3>
+          <p>Easy slip-on design</p>
+          <div>
+            <span class="price">₹1,299</span><span class="old-price">₹1,799</span><span class="discount">28% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+       <!-- Card 4 -->
+      <div class="card" onclick="viewProduct('kidsformals4')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFTxciAwyvyLsPhbP89p4_ThbdTpoqFagsWA&s" />
+        <div class="card-content">
+          <h3>Shiny Black Party Shoes</h3>
+          <p>Perfect for functions</p>
+          <div>
+            <span class="price">₹1,799</span><span class="old-price">₹2,499</span><span class="discount">28% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+       <!-- Card 5 -->
+      <div class="card" onclick="viewProduct('kidsformals5')">
+        <img src="https://m.media-amazon.com/images/I/610juxe9xWL._SL1500_.jpg" />
+        <div class="card-content">
+          <h3>Tan Oxford Shoes</h3>
+          <p>Smart & elegant</p>
+          <div>
+            <span class="price">₹1,699</span><span class="old-price">₹2,299</span><span class="discount">26% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+       <!-- Card 6 -->
+      <div class="card" onclick="viewProduct('kidsformals6')">
+        <img src="https://www.mumkins.in/cdn/shop/products/boys-shoes-bshoes018-black-1.jpg?v=1756207716&width=1080" />
+        <div class="card-content">
+          <h3>Formal Loafers</h3>
+          <p>Slip-on comfort</p>
+          <div>
+            <span class="price">₹1,599</span><span class="old-price">₹2,099</span><span class="discount">24% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+       <!-- Card 7 -->
+      <div class="card" onclick="viewProduct('kidsformals7')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx9HaWwNVDI13JmzuFeFu0VcAKKjuR3nuXDA&s" />
+        <div class="card-content">
+          <h3>Glossy Lace-Up Shoes</h3>
+          <p>Classic formal style</p>
+          <div>
+            <span class="price">₹1,299</span><span class="old-price">₹1,899</span><span class="discount">32% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+       <!-- Card 8 -->
+      <div class="card" onclick="viewProduct('kidsformals8')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkQ1qF0mFMrlrwVSH97sEdsSB3i3RCw6XBNA&s" />
+        <div class="card-content">
+          <h3>Maroon Party Shoes</h3>
+          <p>Unique color touch</p>
+          <div>
+            <span class="price">₹1,799</span><span class="old-price">₹2,499</span><span class="discount">28% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+       <!-- Card 9 -->
+      <div class="card" onclick="viewProduct('kidsformals9')">
+        <img src="https://m.media-amazon.com/images/I/61PQ0FJMceL._UY1000_.jpg" />
+        <div class="card-content">
+          <h3>Velcro Formal Shoes</h3>
+          <p>Easy for kids</p>
+          <div>
+            <span class="price">₹1,099</span><span class="old-price">₹1,599</span><span class="discount">31% OFF</span>
+          </div>
+          <div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+
+       <!-- Card 10 -->
+      <div class="card" onclick="viewProduct('kidsformals10')">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2020/9/YE/UT/KA/94147109/kids-boy-white-loafer-shoes-500x500.jpg" />
+        <div class="card-content">
+          <h3>White Formal Shoes</h3>
+          <p>Fresh & elegant</p>
+          <div>
+            <span class="price">₹1,499</span><span class="old-price">₹2,099</span><span class="discount">29% OFF</span>
+          </div><div class="actions">
+            <button class="add-cart">Add to Cart</button>
+            <span class="wishlist">🤍</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="cart-popup" id="cartPopup">✅ Added to Cart!</div>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        &copy; 2025 Solevia. All Rights Reserved. | Designed with ❤️ by Solevia
+        Team
+      </p>
+      <p>
+        <a href="privacyPolicy.html">Privacy Policy</a> |
+        <a href="termsOfService.html">Terms of Service</a> |
+        <a href="#">Contact Us</a>
+      </p>
+    </footer>
+    <script>
+  // Load navbar.html into every page
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+
+      // Optional: Highlight current page
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        if(link.href === window.location.href) {
+          link.style.color = '#e53935'; // active color
+        }
+      });
+    })
+    .catch(err => console.log('Error loading navbar:', err));
+</script>
+
+<script>
+    function viewProduct(id) {
+      window.location.href = `product.html?id=${id}`;
+    }
+
+    // Load navbar dynamically
     fetch('navbar.html')
       .then(res => res.text())
-      .then(html => document.getElementById('navbar-placeholder').innerHTML = html);
+      .then(data => document.getElementById('navbar-placeholder').innerHTML = data)
+      .catch(err => console.log('Navbar load error:', err));
   </script>
-</body>
+
+  </body>
 </html>

@@ -46,15 +46,6 @@ const products = {
         image: "https://jmlooks.com/cdn/shop/products/5-long-lth-black-jm-looks-black-original-imagvbnmbuhejqvj.jpg?v=1752155783" 
       },
 
-      boots5: {
-        name: "Knee High Black Boots",
-        description: "Sleek tall boots for chic look",
-        price: 4999,
-        oldPrice: 6599,
-        discount: "24% OFF",
-        image: "https://jmlooks.com/cdn/shop/products/5-long-lth-black-jm-looks-black-original-imagvbnmbuhejqvj.jpg?v=1752155783" 
-      },
-
       boots6: {
         name: "Combat Military Boots",
         description: "Edgy and bold style",
