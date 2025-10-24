@@ -1,105 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Details - Solevia</title>
-  <link rel="stylesheet" href="products.css">
+  <link rel="stylesheet" href="products.css" />
+
+  <!-- ✅ Link your kidsboots.js -->
+  <script src="scripts/kidsboots.js"></script>
+  <script src="scripts/adidas.js"></script>
+  <script src="scripts/boots.js"></script>
+  <script src="scripts/casualSneaker.js"></script>
+  <script src="scripts/formal.js"></script>
+  <script src="scripts/heels.js"></script>
+
   <style>
     body {
-      background: linear-gradient(to right, #ffffff, #f8e0ec);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to right, #fff, #ffe4ec);
+      margin: 0;
+      padding: 0;
     }
-    .product-detail {
+
+    .product-container {
       display: flex;
-      flex-wrap: wrap;
+      align-items: flex-start;
       justify-content: center;
-      align-items: center;
-      gap: 40px;
+      gap: 60px;
       padding: 60px;
+      max-width: 1100px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 25px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
     }
-    .product-detail img {
-      width: 350px;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+
+    .product-image {
+      width: 420px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
     }
+
     .product-info {
-      max-width: 450px;
+      max-width: 550px;
     }
-    .product-info h2 {
-      color: #D17A9A;
+
+    .product-info h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 15px;
     }
+
     .product-info p {
+      font-size: 1rem;
       color: #555;
-      line-height: 1.5;
+      margin-bottom: 20px;
+      line-height: 1.6;
     }
+
+    .price-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
     .price {
-      font-size: 1.5rem;
-      color: #000;
-      margin-top: 15px;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #e53935;
     }
+
     .old-price {
-      text-decoration: line-through;
+      font-size: 1.1rem;
       color: #888;
-      margin-left: 10px;
+      text-decoration: line-through;
     }
+
     .discount {
-      color: #D17A9A;
-      font-weight: bold;
-      margin-left: 10px;
+      font-size: 1rem;
+      color: #2e7d32;
+      font-weight: 600;
     }
-    button {
-      background: #D17A9A;
-      color: #fff;
+
+    .add-cart {
+      background: #e53935;
+      color: white;
+      font-size: 1rem;
       border: none;
-      border-radius: 8px;
+      border-radius: 30px;
       padding: 12px 25px;
       cursor: pointer;
-      margin-top: 20px;
-      font-size: 1rem;
-      transition: background 0.3s ease;
+      transition: 0.3s ease;
     }
-    button:hover {
-      background: #c64776;
+
+    .add-cart:hover {
+      background: #b71c1c;
     }
   </style>
 </head>
 <body>
-
   <div id="navbar-placeholder"></div>
 
-  <div class="product-detail">
-    <img id="productImage" alt="Product Image">
-    <div class="product-info">
-      <h2 id="productName"></h2>
-      <p id="productDescription"></p>
-      <p class="price">
-        <span id="productPrice"></span>
-        <span class="old-price" id="productOldPrice"></span>
-        <span class="discount" id="productDiscount"></span>
-      </p>
-      <button>Add to Cart</button>
-    </div>
-  </div>
+  <section id="product-details" class="product-details"></section>
 
-  <script src="scripts/productsData.js"></script>
   <script>
-    const productId = localStorage.getItem("selectedProduct");
-    const product = products[productId];
-
-    if (product) {
-      document.getElementById("productImage").src = product.image;
-      document.getElementById("productName").textContent = product.name;
-      document.getElementById("productDescription").textContent = product.description;
-      document.getElementById("productPrice").textContent = `₹${product.price}`;
-      document.getElementById("productOldPrice").textContent = `₹${product.oldPrice}`;
-      document.getElementById("productDiscount").textContent = product.discount;
-    }
-
+    // Load navbar
     fetch('navbar.html')
       .then(res => res.text())
-      .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
-  </script>
+      .then(data => document.getElementById('navbar-placeholder').innerHTML = data)
+      .catch(err => console.log('Navbar load error:', err));
 
+    // Get product ID from URL
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+
+    // Get product data from kidsboots.js
+    
+
+
+    let product;
+if (window.kidsboots?.[productId]) product = window.kidsboots[productId];
+else if (window.adidas?.[productId]) product = window.adidas[productId];
+else if (window.boots?.[productId]) product = window.boots[productId];
+else if (window.casualSneaker?.[productId]) product = window.casualSneaker[productId];
+else if (window.formal?.[productId]) product = window.formal[productId];
+else if (window.heels?.[productId]) product = window.heels[productId];
+// add other category objects here...
+
+
+    if (!product) {
+      document.getElementById('product-details').innerHTML = `<h2 style="text-align:center;">❌ Product not found!</h2>`;
+    } else {
+      document.getElementById('product-details').innerHTML = `
+        <div class="product-container">
+          <img src="${product.image}" alt="${product.name}" class="product-image">
+          <div class="product-info">
+            <h1>${product.name}</h1>
+            <p>${product.description}</p>
+            <div class="price-section">
+              <span class="price">₹${product.price}</span>
+              <span class="old-price">₹${product.oldPrice}</span>
+              <span class="discount">${product.discount}</span>
+            </div>
+            <button class="add-cart">Add to Cart</button>
+          </div>
+        </div>
+      `;
+    }
+  </script>
 </body>
 </html>
