@@ -18,7 +18,9 @@
     </section>
 
     <section class="products">
-      <div class="card">
+
+      <!-- Card 1 -->
+      <div class="card"onclick="viewProduct('sandals1')">
         <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSm8UEDK4ipgVjEexVzhK4MvIZFIkUwWmp8trV211JLTKlb0jNW5_byQs4F-nCct0WFzLI4m40N996ZoddCCJ09z1iHxyFdC12inFzPSA5eolEOi9vLJ94Fpmo" />
         <div class="card-content">
           <h3>Beige Summer Sandals</h3>
@@ -31,7 +33,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 2 -->
+      <div class="card"onclick="viewProduct('sandals2')">
         <img src="https://m.media-amazon.com/images/I/71w6cfhT0gL._UY1000_.jpg" />
         <div class="card-content">
           <h3>White Strap Sandals</h3>
@@ -44,7 +47,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 3 -->
+      <div class="card"onclick="viewProduct('sandals3')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG0F_ryCQThppqo_7NZZWB2OO_mD4UNcXX8Q&s" />
         <div class="card-content">
           <h3>Brown Leather Sandals</h3>
@@ -57,7 +61,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 4 -->
+      <div class="card"onclick="viewProduct('sandals4')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXpZoAukhZVpRUtmZ1lEKjjTsENhyT4KrtAA&s" />
         <div class="card-content">
           <h3>Floral Print Sandals</h3>
@@ -70,7 +75,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 5 -->
+      <div class="card"onclick="viewProduct('sandals5')">
         <img src="https://admin.mochishoes.com/product/33-631/660/33-631LA11.jpg" />
         <div class="card-content">
           <h3>Casual Black Sandals</h3>
@@ -83,7 +89,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 6 -->
+      <div class="card"onclick="viewProduct('sandals6')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnfBPiypkp3v0aC4f0IBpKLIx0Xwi9DXjAuQ&s" />
         <div class="card-content">
           <h3>Blue Strappy Sandals</h3>
@@ -96,7 +103,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 7 -->
+      <div class="card"onclick="viewProduct('sandals7')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMUVVkE8FWMnVXmdcq_Zv203u9MRAKzxR78Q&s" />
         <div class="card-content">
           <h3>Nude Flat Sandals</h3>
@@ -109,7 +117,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 8 -->
+      <div class="card" onclick="viewProduct('sandals8')">
         <img src="https://eridani.in/cdn/shop/articles/Clary-Heels-3291-Beige-1_aad4fed9-281f-4e3f-9a8f-35d8f618abc3.jpg?v=1753722557&width=2048" />
         <div class="card-content">
           <h3>Classic Tan Sandals</h3>
@@ -122,7 +131,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 9 -->
+      <div class="card"onclick="viewProduct('sandals9')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcajCocJtIN3odn3ND8e7rchtptgrdVj23jQ&s" />
         <div class="card-content">
           <h3>Golden Flat Sandals</h3>
@@ -135,7 +145,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 10 -->
+      <div class="card"onclick="viewProduct('sandals10')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRgNEQevVm5b5xDviAaT9LLqNbV7yrqpUYkg&s" />
         <div class="card-content">
           <h3>Silver Shiny Sandals</h3>
@@ -149,7 +160,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 11 -->
+      <div class="card"onclick="viewProduct('sandals11')">
         <img src="https://m.media-amazon.com/images/I/61PFT62MzCL._UY1000_.jpg" />
         <div class="card-content">
           <h3>Pink Cute Sandals</h3>
@@ -162,7 +174,8 @@
         </div>
       </div>
 
-      <div class="card">
+      <!-- Card 12 -->
+      <div class="card"onclick="viewProduct('sandals12')">
         <img src="https://assets.ajio.com/medias/sys_master/root/20230629/88zR/649ceecceebac147fc36376f/-473Wx593H-466075696-white-MODEL.jpg" />
         <div class="card-content">
           <h3>Strappy White Sandals</h3>
@@ -202,6 +215,18 @@
     })
     .catch(err => console.log('Error loading navbar:', err));
 </script>
+<script>
+    function viewProduct(id) {
+      window.location.href = `product.html?id=${id}`;
+    }
+
+    // Load navbar dynamically
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar-placeholder').innerHTML = data)
+      .catch(err => console.log('Navbar load error:', err));
+  </script>
+
 
   </body>
 </html>
